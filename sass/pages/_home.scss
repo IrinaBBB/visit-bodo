@@ -1,0 +1,17 @@
+section.about {
+    background-color: $color-grey-light-1;
+    margin-top: -10vh;
+    padding: 15rem 0 25rem;
+}
+
+section.features {
+    padding: 20rem 0;
+    margin-top: -13vh;
+    background-image: linear-gradient(to right bottom, rgba($color-light, .8), rgba($color-dark, .8)), url("../../img/nature-1.jpg");
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+}
+
+
+
