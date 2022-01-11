@@ -125,6 +125,10 @@ body {
   margin-bottom: 8rem;
 }
 
+.u-margin-top-big {
+  margin-top: 8rem;
+}
+
 .btn:link, .btn:visited {
   position: relative;
   text-transform: uppercase;
@@ -164,6 +168,16 @@ body {
 .btn-white::after {
   background-color: #fff;
 }
+.btn--green {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #61CC00;
+  color: #fff;
+  padding: 20px 30px;
+}
+.btn--green::after {
+  background-color: #fff;
+}
 .btn-animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
@@ -191,6 +205,123 @@ body {
 
 .paragraph {
   font-size: 1.6rem;
+}
+
+.card {
+  perspective: 150rem;
+  position: relative;
+  height: 50rem;
+}
+.card__side {
+  width: 100%;
+  height: 50rem;
+  backface-visibility: hidden;
+  transition: all 0.8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+}
+.card__side--front {
+  background: #fff;
+}
+.card__side--back {
+  transform: rotateY(180deg);
+}
+.card__side--back--1 {
+  background: linear-gradient(to right bottom, #548CF6, #325DE9);
+}
+.card__side--back--2 {
+  background: linear-gradient(to right bottom, #61CC00, #0E810C);
+}
+.card__side--back--3 {
+  background: linear-gradient(to right bottom, #ffb6a2, #ff4674);
+}
+.card:hover .card__side--front {
+  transform: rotateY(-180deg);
+}
+.card:hover .card__side--back {
+  transform: rotateY(0);
+}
+.card__picture {
+  position: relative;
+  background-size: cover;
+  height: 23rem;
+  background-blend-mode: hard-light;
+}
+.card__picture--1 {
+  background-image: linear-gradient(to right bottom, #548CF6, #325DE9), url("../../img/card-image-1.jpg");
+}
+.card__picture--2 {
+  background-image: linear-gradient(to right bottom, #61CC00, #0E810C), url("../../img/card-image-2.jpg");
+}
+.card__picture--3 {
+  background-image: linear-gradient(to right bottom, #ffb6a2, #ff4674), url("../../img/card-image-3.jpg");
+}
+.card__heading {
+  font-size: 2.8rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #fff;
+  position: absolute;
+  top: 19.5rem;
+  right: 3rem;
+  width: 70%;
+}
+.card__heading-span {
+  padding: 1rem 1.5rem;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.card__heading-span-1 {
+  background-image: linear-gradient(to right bottom, rgba(84, 140, 246, 0.85), rgba(50, 93, 233, 0.85));
+}
+.card__heading-span-2 {
+  background-image: linear-gradient(to right bottom, rgba(97, 204, 0, 0.85), rgba(14, 129, 12, 0.85));
+}
+.card__heading-span-3 {
+  background-image: linear-gradient(to right bottom, rgba(255, 182, 162, 0.85), rgba(255, 70, 116, 0.85));
+}
+.card__details ul {
+  list-style: none;
+  width: 80%;
+  padding-top: 1rem;
+  margin: 0 auto;
+}
+.card__details ul li {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+.card__details ul li:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+.card__cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.card__price-box {
+  text-align: center;
+  margin-bottom: 8rem;
+}
+.card__price-only {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+.card__price-value {
+  font-size: 5.5rem;
+  font-weight: 100;
+  color: #fff;
+  margin-bottom: 6rem;
+}
+.card__price-nok {
+  font-size: 3rem;
 }
 
 .composition {
@@ -317,6 +448,12 @@ section.features {
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+}
+
+section.tours {
+  background-color: #f7f7f7;
+  padding: 25rem 0 30rem 0;
+  margin-top: -10rem;
 }
 
 /*# sourceMappingURL=main.css.map */

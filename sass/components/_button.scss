@@ -46,6 +46,18 @@
         }
     }
 
+    &--green {
+        display: inline-block;
+        text-decoration: none;
+        background-color: $color-medium;
+        color: $color-white;
+        padding: 20px 30px;
+
+        &::after {
+            background-color: $color-white;
+        }
+    }
+
     &-animated {
         animation: moveInBottom .5s ease-out .75s;
         animation-fill-mode: backwards;
