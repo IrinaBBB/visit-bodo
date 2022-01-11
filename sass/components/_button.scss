@@ -7,6 +7,16 @@
         font-size: $default-font-size;
     }
 
+    .btn-big {
+        &:link,
+        &:visited {
+            position: relative;
+            text-transform: uppercase;
+            transition: all .2s;
+            font-size: 3rem;
+        }
+    }
+
     &:hover {
         transform: translateY(-.3rem);
         box-shadow: 0 1rem 2rem rgba($color-black, .2);
@@ -54,7 +64,7 @@
         padding: 20px 30px;
 
         &::after {
-            background-color: $color-white;
+            background-color: $color-medium;
         }
     }
 
@@ -76,6 +86,19 @@
         transition: all .3s;
     }
 
+    &-large {
+        &:link,
+        &:visited {
+            display: inline-block;
+            color: $color-white;
+            text-decoration: none;
+            border-bottom: 1px solid $color-white;
+            padding: 3px;
+            font-size: 2rem;
+            transition: all .3s;
+        }
+    }
+
     &:hover {
         background: linear-gradient($color-light, $color-dark);
         color: white;
@@ -87,6 +110,8 @@
         transform: translateY(-1px);
         box-shadow: 0 .5rem 1rem rgba($color-black, .2);
     }
+
+
 }
 
 .paragraph {
