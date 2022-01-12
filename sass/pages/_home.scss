@@ -25,6 +25,31 @@ section.stories {
     position: relative;
     clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
     margin-top: -10%;
+    margin-bottom: -10%;
+}
+
+section.booking {
+    padding: 30rem 15rem 15rem 15rem;
+    //background-image: linear-gradient(to right bottom, rgba($color-light, .8), rgba($color-dark, .8));
+    //background: $color-grey-light-1;
+    background-image: linear-gradient(120deg, rgba($color-secondary-light, .2), rgba($color-secondary-dark, .2));
+}
+
+.book {
+    background-image: linear-gradient(
+                    105deg,
+                    rgba($color-grey-light-1, .85) 0%,
+                    rgba($color-grey-light-1, .85) 50%,
+                    transparent 50%),
+    url(../../img/booking-image.jpg);
+    background-size: cover;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+    &__form {
+        width: 50%;
+        padding: 6rem;
+    }
 }
 
 

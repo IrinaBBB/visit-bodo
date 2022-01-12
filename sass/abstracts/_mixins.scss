@@ -5,3 +5,13 @@
         clear: both;
     }
 }
+
+@mixin secondary-heading {
+    display: inline-block;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: transparent;
+    -webkit-background-clip: text;
+    transition: all .5s;
+}

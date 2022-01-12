@@ -34,16 +34,21 @@ body {
 }
 
 .heading-secondary {
-    display: inline-block;
-    font-size: 3.5rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: transparent;
+    @include secondary-heading;
     background-image: linear-gradient(to right bottom, $color-light, $color-dark);
-    -webkit-background-clip: text;
-    transition: all .5s;
+
+
+    &-blue {
+        @include secondary-heading;
+        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+    }
 
     &:hover {
+        transform: scaleX(1.1) scaleY(1.1);
+        text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+    }
+
+    &-blue:hover {
         transform: scaleX(1.1) scaleY(1.1);
         text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
     }
