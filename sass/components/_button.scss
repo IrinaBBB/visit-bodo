@@ -76,7 +76,7 @@
     &--blue {
         display: inline-block;
         text-decoration: none;
-        background: linear-gradient($color-secondary-light, $color-secondary-dark);;
+        background: linear-gradient($color-secondary-light, $color-secondary-dark);
         color: $color-white;
         padding: 20px 30px;
 
@@ -127,8 +127,6 @@
         transform: translateY(-1px);
         box-shadow: 0 .5rem 1rem rgba($color-black, .2);
     }
-
-
 }
 
 .paragraph {
