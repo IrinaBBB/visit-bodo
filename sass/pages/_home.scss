@@ -2,6 +2,14 @@ section.about {
     background-color: $color-grey-light-1;
     margin-top: -10vh;
     padding: 15rem 0 25rem;
+
+    @include respond(tab-land) {
+        padding: 30rem 10rem 30rem 10rem;
+    }
+
+    @include respond(tab-port) {
+        padding: 30rem 10rem 60rem 10rem;
+    }
 }
 
 section.features {
@@ -11,6 +19,10 @@ section.features {
     background-size: cover;
     background-position: top;
     clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+
+    @include respond(tab-port) {
+        padding: 20rem 0;
+    }
 }
 
 section.tours {
@@ -26,12 +38,21 @@ section.stories {
     clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
     margin-top: -10%;
     margin-bottom: -10%;
+
+    @include respond(tab-port) {
+        margin-bottom: -15%;
+    }
 }
 
 section.booking {
     padding: 30rem 15rem 30rem 15rem;
     background-image: linear-gradient(120deg, rgba($color-secondary-light, .2), rgba($color-secondary-dark, .2));
     margin-bottom: -10rem;
+
+    @include respond(phone) {
+        padding: 10rem 0;
+        margin-top: -40rem;
+    }
 }
 
 .book {
@@ -45,9 +66,35 @@ section.booking {
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
+    @include respond(tab-land) {
+        background-image: linear-gradient(
+                        105deg,
+                        rgba($color-grey-light-1, .85) 0%,
+                        rgba($color-grey-light-1, .85) 65%,
+                        transparent 65%),
+        url(../../img/booking-image.jpg);
+    }
+    @include respond(tab-port) {
+        background-image: linear-gradient(
+                        to right,
+                        rgba($color-grey-light-1, .85) 0%,
+                        rgba($color-grey-light-1, .85) 100%),
+        url(../../img/booking-image.jpg);
+    }
+
+
+
     &__form {
         width: 50%;
         padding: 6rem;
+
+        @include respond(tab-land) {
+            width: 70%;
+        }
+
+        @include respond(tab-port) {
+            width: 100%;
+        }
     }
 }
 

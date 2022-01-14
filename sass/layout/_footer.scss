@@ -1,13 +1,21 @@
 .footer {
     background-color: $color-gray-dark-4;
-    padding: 20rem 10rem 10rem 10rem;
+    padding: 20rem 10rem 6rem 10rem;
     font-size: 1.4rem;
     -webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
     clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
 
+    @include respond(phone) {
+        margin-top: -30rem;
+    }
+
     & .row {
         display: flex;
         align-items: center;
+
+        @include respond(tab-land) {
+            display: block;
+        }
     }
 
     &__logo-box {

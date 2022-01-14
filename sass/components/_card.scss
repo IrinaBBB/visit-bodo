@@ -79,12 +79,21 @@
         top: 19.5rem;
         right: 3rem;
         width: 70%;
+
+        @include respond(tab-port) {
+            display: inline-block;
+            top: 15%;
+            right: -7%;
+            width: 90%;
+            font-size: 5rem;
+        }
     }
 
     &__heading-span {
         padding: 1rem 1.5rem;
         -webkit-box-decoration-break: clone;
         box-decoration-break: clone;
+
         &-1 {
             background-image: linear-gradient(to right bottom,
                     rgba($color-secondary-light, .85), rgba($color-secondary-dark, .85));
@@ -107,10 +116,12 @@
             width: 80%;
             padding-top: 1rem;
             margin: 0 auto;
+
             li {
                 text-align: center;
                 font-size: 1.5rem;
                 padding: 1rem;
+
                 &:not(:last-child) {
                     border-bottom: 1px solid $color-grey-light-2;
                 }
@@ -146,6 +157,59 @@
 
     &__price-nok {
         font-size: 3rem;
+    }
+
+    //@include respond(tab-port) {
+    @media only screen and (max-width: 56.25rem),
+    only screen and (hover: none) {
+
+        height: auto;
+        border-radius: 3px;
+        background-color: $color-white;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+        &__side {
+            height: auto;
+            position: relative;
+            box-shadow: none;
+
+            &--back {
+                transform: rotateY(0);
+                clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+            }
+        }
+
+        &:hover &__side--front {
+            transform: rotateY(0);
+        }
+
+        &__details {
+            padding: 1rem 3rem;
+        }
+
+        &__cta {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0);
+            width: 100%;
+            padding: 7rem 4rem 4rem 4rem;
+        }
+
+        &__price-box {
+            margin-bottom: 2rem;
+        }
+
+        &__price-value {
+            font-weight: 100;
+            color: $color-white;
+            margin-bottom: 1rem;
+        }
+
+        &__price-nok {
+            font-size: 3rem;
+        }
+
     }
 }
 

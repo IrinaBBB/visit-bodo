@@ -6,8 +6,38 @@
 
 html {
     font-size: 62.5%;
+
+    @include respond(tab-land) {
+        font-size: 56.25%;
+    }
+
+    @include respond(tab-port) {
+        font-size: 50%;
+    }
+
+    @include respond(phone) {
+        font-size: 50%;
+    }
+
+    @include respond(big-desktop) {
+        font-size: 75%;
+    }
 }
 
 body {
     padding: 2.5rem;
+
+    @include respond(tab-port) {
+        padding: 0;
+    }
+}
+
+::selection {
+    background-color: $color-medium;
+    color: $color-white;
+}
+
+.swiper {
+    width: 600px;
+    height: 300px;
 }

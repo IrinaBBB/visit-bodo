@@ -1,3 +1,19 @@
+/*
+0 - 600px:      Phone
+600px - 900px:  Tablet Portrait Mode
+[900px - 1200px]:  Tablet Landscape Mode (Normal Styles Apply)
+1800px ++:      Big Desktop
+
+    $breakpoint argument choices
+    -phone
+    -tab-port
+    -tab-land
+    -big-desktop
+
+    1em = 16px
+
+    ORDER: Base + typography > general layout + grid > page layout > components
+*/
 @keyframes moveInBottom {
   0% {
     opacity: 0;
@@ -43,9 +59,44 @@
 html {
   font-size: 62.5%;
 }
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
 
 body {
   padding: 2.5rem;
+}
+@media only screen and (max-width: 56.25em) {
+  body {
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: #61CC00;
+  color: #fff;
+}
+
+.swiper {
+  width: 600px;
+  height: 300px;
 }
 
 body {
@@ -61,6 +112,11 @@ body {
   text-transform: uppercase;
   margin-bottom: 1.6rem;
 }
+@media only screen and (max-width: 56.25em) {
+  .heading-primary {
+    margin-bottom: 6rem;
+  }
+}
 .heading-primary-main {
   display: block;
   font-size: 5rem;
@@ -69,6 +125,17 @@ body {
   margin-right: -3.2rem;
   backface-visibility: hidden;
   animation: moveInLeft 1s ease-out;
+}
+@media only screen and (max-width: 56.25em) {
+  .heading-primary-main {
+    margin-bottom: 2.5rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .heading-primary-main {
+    letter-spacing: 1rem;
+    font-size: 5rem;
+  }
 }
 .heading-primary-secondary {
   display: block;
@@ -79,6 +146,11 @@ body {
   backface-visibility: hidden;
   animation: moveInRight 1s ease-out;
   animation-duration: 1s;
+}
+@media only screen and (max-width: 37.5em) {
+  .heading-primary-secondary {
+    letter-spacing: 0.5rem;
+  }
 }
 
 .heading-secondary {
@@ -344,6 +416,15 @@ body {
   right: 3rem;
   width: 70%;
 }
+@media only screen and (max-width: 56.25em) {
+  .card__heading {
+    display: inline-block;
+    top: 15%;
+    right: -7%;
+    width: 90%;
+    font-size: 5rem;
+  }
+}
 .card__heading-span {
   padding: 1rem 1.5rem;
   -webkit-box-decoration-break: clone;
@@ -396,6 +477,48 @@ body {
 }
 .card__price-nok {
   font-size: 3rem;
+}
+@media only screen and (max-width: 56.25rem), only screen and (hover: none) {
+  .card {
+    height: auto;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  }
+  .card__side {
+    height: auto;
+    position: relative;
+    box-shadow: none;
+  }
+  .card__side--back {
+    transform: rotateY(0);
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+  }
+  .card:hover .card__side--front {
+    transform: rotateY(0);
+  }
+  .card__details {
+    padding: 1rem 3rem;
+  }
+  .card__cta {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0);
+    width: 100%;
+    padding: 7rem 4rem 4rem 4rem;
+  }
+  .card__price-box {
+    margin-bottom: 2rem;
+  }
+  .card__price-value {
+    font-weight: 100;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  .card__price-nok {
+    font-size: 3rem;
+  }
 }
 
 .composition {
@@ -456,6 +579,11 @@ body {
   text-align: justify-all;
 }
 
+@media only screen and (max-width: 37.5em) {
+  .form {
+    padding: 25rem 0;
+  }
+}
 .form__group:not(:last-child) {
   margin-bottom: 2rem;
 }
@@ -471,6 +599,11 @@ body {
   width: 90%;
   display: block;
   transition: all 0.3s;
+}
+@media only screen and (max-width: 56.25em) {
+  .form__input {
+    width: 100%;
+  }
 }
 .form__input:focus {
   outline: none;
@@ -499,6 +632,12 @@ body {
 .form__radio-group {
   width: 49%;
   display: inline-block;
+}
+@media only screen and (max-width: 56.25em) {
+  .form__radio-group {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
 }
 .form__radio-input {
   display: none;
@@ -547,6 +686,17 @@ body {
   font-size: 1.6rem;
   transform: skewX(-12deg);
 }
+@media only screen and (max-width: 56.25em) {
+  .story {
+    width: 100%;
+    padding: 4rem 4rem 4rem 7rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .story {
+    transform: skewX(0);
+  }
+}
 .story > * {
   transform: skew(12deg);
 }
@@ -562,9 +712,19 @@ body {
   position: relative;
   text-align: center;
 }
+@media only screen and (max-width: 37.5em) {
+  .story__shape {
+    transform: translateX(-3rem) skewX(0);
+  }
+}
 .story__image {
   height: 100%;
   backface-visibility: hidden;
+}
+@media only screen and (max-width: 37.5em) {
+  .story__text {
+    transform: skewX(0);
+  }
 }
 .story__caption {
   position: absolute;
@@ -588,14 +748,24 @@ body {
 
 .footer {
   background-color: #333;
-  padding: 20rem 10rem 10rem 10rem;
+  padding: 20rem 10rem 6rem 10rem;
   font-size: 1.4rem;
   -webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
 }
+@media only screen and (max-width: 37.5em) {
+  .footer {
+    margin-top: -30rem;
+  }
+}
 .footer .row {
   display: flex;
   align-items: center;
+}
+@media only screen and (max-width: 75em) {
+  .footer .row {
+    display: block;
+  }
 }
 .footer__logo-box {
   text-align: center;
@@ -640,6 +810,16 @@ body {
 .row:not(:last-child) {
   margin-bottom: 6rem;
 }
+@media only screen and (max-width: 56.25em) {
+  .row:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .row {
+    max-width: 50rem;
+  }
+}
 .row::after {
   content: "";
   display: table;
@@ -650,6 +830,17 @@ body {
 }
 .row [class^=col-]:not(:last-child) {
   margin-right: 6rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .row [class^=col-]:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 4rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .row [class^=col-] {
+    width: 100% !important;
+  }
 }
 .row .col-1-of-2 {
   width: calc((100% - 6rem) / 2);
@@ -678,6 +869,16 @@ body {
   background-position: top;
   clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
 }
+@media only screen and (max-width: 75em) {
+  .header {
+    height: 70vh;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .header {
+    height: 50vh;
+  }
+}
 
 .text-box {
   position: absolute;
@@ -685,11 +886,40 @@ body {
   left: 45%;
   text-align: right;
 }
+@media only screen and (max-width: 75em) {
+  .text-box {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 85%;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .text-box {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .text-box {
+    width: 100%;
+  }
+}
 
 section.about {
   background-color: #f7f7f7;
   margin-top: -10vh;
   padding: 15rem 0 25rem;
+}
+@media only screen and (max-width: 75em) {
+  section.about {
+    padding: 30rem 10rem 30rem 10rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  section.about {
+    padding: 30rem 10rem 60rem 10rem;
+  }
 }
 
 section.features {
@@ -699,6 +929,11 @@ section.features {
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+}
+@media only screen and (max-width: 56.25em) {
+  section.features {
+    padding: 20rem 0;
+  }
 }
 
 section.tours {
@@ -714,11 +949,22 @@ section.stories {
   margin-top: -10%;
   margin-bottom: -10%;
 }
+@media only screen and (max-width: 56.25em) {
+  section.stories {
+    margin-bottom: -15%;
+  }
+}
 
 section.booking {
   padding: 30rem 15rem 30rem 15rem;
   background-image: linear-gradient(120deg, rgba(84, 140, 246, 0.2), rgba(50, 93, 233, 0.2));
   margin-bottom: -10rem;
+}
+@media only screen and (max-width: 37.5em) {
+  section.booking {
+    padding: 10rem 0;
+    margin-top: -40rem;
+  }
 }
 
 .book {
@@ -727,9 +973,29 @@ section.booking {
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
 }
+@media only screen and (max-width: 75em) {
+  .book {
+    background-image: linear-gradient(105deg, rgba(247, 247, 247, 0.85) 0%, rgba(247, 247, 247, 0.85) 65%, transparent 65%), url(../../img/booking-image.jpg);
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .book {
+    background-image: linear-gradient(to right, rgba(247, 247, 247, 0.85) 0%, rgba(247, 247, 247, 0.85) 100%), url(../../img/booking-image.jpg);
+  }
+}
 .book__form {
   width: 50%;
   padding: 6rem;
+}
+@media only screen and (max-width: 75em) {
+  .book__form {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .book__form {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -11,6 +11,10 @@ body {
     text-transform: uppercase;
     margin-bottom: 1.6rem;
 
+    @include respond(tab-port) {
+        margin-bottom: 6rem;
+    }
+
     &-main {
         display: block;
         font-size: 5rem;
@@ -19,6 +23,15 @@ body {
         margin-right: -3.2rem;
         backface-visibility: hidden;
         animation: moveInLeft 1s ease-out;
+
+        @include respond(tab-port) {
+            margin-bottom: 2.5rem;
+        }
+
+        @include respond(phone) {
+            letter-spacing: 1rem;
+            font-size: 5rem;
+        }
     }
 
     &-secondary {
@@ -30,6 +43,10 @@ body {
         backface-visibility: hidden;
         animation: moveInRight 1s ease-out;
         animation-duration: 1s;
+
+        @include respond(phone) {
+            letter-spacing: .5rem;
+        }
     }
 }
 
