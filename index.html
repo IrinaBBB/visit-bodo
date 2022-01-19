@@ -140,7 +140,7 @@
 
     </section>
 
-    <section class="tours">
+    <section class="tours" id="tours">
         <div class="u-center-text u-margin-bottom-big">
             <h2 class="heading-secondary">Most popular attractions</h2>
         </div>
@@ -175,7 +175,7 @@
                                 <p class="card__price-only">Only</p>
                                 <p class="card__price-value">2300<span class="card__price-nok">NOK</span>
                                 </p>
-                                <a href="#" class="btn btn-white">Book now!</a>
+                                <a href="#popup" class="btn btn-white">Book now!</a>
                             </div>
                             <!-- /.card__price-box -->
                         </div>
@@ -214,7 +214,7 @@
                             <div class="card__price-box">
                                 <p class="card__price-only">Only</p>
                                 <p class="card__price-value">3500<span class="card__price-nok">NOK</span></p>
-                                <a href="#" class="btn btn-white">Book now!</a>
+                                <a href="#popup" class="btn btn-white">Book now!</a>
                             </div>
                             <!-- /.card__price-box -->
                         </div>
@@ -254,7 +254,7 @@
                                 <p class="card__price-only">Only</p>
                                 <p class="card__price-value">5000<span class="card__price-nok">NOK</span>
                                 </p>
-                                <a href="#" class="btn btn-white">Book now!</a>
+                                <a href="#popup" class="btn btn-white">Book now!</a>
                             </div>
                             <!-- /.card__price-box -->
                         </div>
@@ -380,7 +380,6 @@
         </div>
         <!-- /.row -->
     </section>
-
     <footer class="footer">
         <div class="footer__logo-box">
             <img src="./img/logo-dark.svg" alt="visit bodø logo" class="footer__logo">
@@ -413,6 +412,33 @@
         </div>
         <!-- /.row -->
     </footer>
+
+    <div class="popup" id="popup">
+        <div class="popup__content">
+            <div class="popup__left">
+                <img src="./img/hero.jpg" alt="Bodø Image" class="popup__image">
+                <img src="./img/nature-1.jpg" alt="Nature Image" class="popup__image">
+            </div>
+            <!-- /.popup__left -->
+            <div class="popup__right">
+                <a href="#tours" class="popup__close">&times;</a>
+                <h2 class="heading-secondary u-margin-bottom-small">
+                    Start booking now
+                </h2>
+                <h3 class="heading-tertiary u-margin-bottom-small">
+                    Important &ndash; Please read these terms before booking
+                </h3>
+                <p class="popup__text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet aut, autem blanditiis consectetur deserunt dolore earum facere fugit harum hic molestias mollitia nemo non obcaecati quo recusandae reiciendis rem repellendus, sint temporibus vero voluptatem. Adipisci dignissimos, doloremque dolores itaque mollitia pariatur rem rerum voluptas! Corporis distinctio eligendi esse, et excepturi fugiat labore, magnam optio pariatur placeat quaerat quos sunt suscipit vitae voluptatibus! Aperiam, architecto at dicta dignissimos dolores ea eaque exercitationem explicabo id illo illum inventore ipsa itaque nisi non nulla obcaecati, omnis qui repellat rerum sequi tenetur ullam unde veniam vero. Aut dolore provident similique, tempora tenetur totam.
+                </p>
+                <!-- /.popup__text -->
+                <a href="#" class="btn btn--green">Book now</a>
+            </div>
+            <!-- /.popup__right -->
+        </div>
+        <!-- /.popup__content -->
+    </div>
+    <!-- /.popup -->
 
 </main>
 <script src="./js/swiper-bundle.min.js"></script>
