@@ -1,40 +1,43 @@
 .header {
-    position: relative;
-    height: 95vh;
-    background-image: linear-gradient(to right bottom, rgba($color-light, .8), rgba($color-dark, .8)), url("../img/hero.jpg");
-    background-size: cover;
-    background-position: top;
-    clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
+  position: relative;
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-light, 0.4),
+      rgba($color-dark, 0.4)
+    ),
+    url("../../img/hero.jpg");
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
 
-    @include respond(tab-land) {
-        height: 70vh;
-    }
+  @include respond(tab-land) {
+    height: 70vh;
+  }
 
-    @include respond(tab-port) {
-        height: 50vh;
-    }
+  @include respond(tab-port) {
+    height: 50vh;
+  }
 }
 
 .text-box {
-    position: absolute;
-    top: 52%;
-    left: 45%;
-    text-align: right;
-    @include respond(tab-land) {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        width: 85%;
-    }
+  position: absolute;
+  top: 52%;
+  left: 45%;
+  text-align: right;
+  @include respond(tab-land) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 85%;
+  }
 
-    @include respond(tab-port) {
-        width: 90%;
-    }
+  @include respond(tab-port) {
+    width: 90%;
+  }
 
-    @include respond(phone) {
-        width: 100%;
-    }
-
-
+  @include respond(phone) {
+    width: 100%;
+  }
 }
